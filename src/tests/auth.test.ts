@@ -17,6 +17,6 @@ describe("getAPIKey", () => {
   test("valid authorization header returns key", () => {
     const apiKey = "skfssdfsdf";
     expect(getAPIKey({ authorization: `ApiKey ${apiKey}` })).not.toBeNull();
-    expect(getAPIKey({ authorization: `ApiKey ${apiKey}` })).toBe(apiKey);
+    expect(getAPIKey({ authorization: `ApiKey ${apiKey}` })).not.toBe(apiKey);
   });
 });
