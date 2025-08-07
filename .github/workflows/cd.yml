@@ -37,7 +37,5 @@ jobs:
       - name: "Use gcloud CLI"
         run: "gcloud info"
 
-      - name: "Build Docker image and push to Google Artifact Registry"
-        run: gcloud builds submit "$GITHUB_WORKSPACE" \
-          --tag us-central1-docker.pkg.dev/notely-468313/notely-ar-repo:latest \
-          --file "$GITHUB_WORKSPACE/Dockerfile"
+      - name: Submit build to Google Cloud Build
+        run: gcloud builds submit "$GITHUB_WORKSPACE" --tag us-central1-docker.pkg.dev/notely-468313/notely-ar-repo:latest --file "$GITHUB_WORKSPACE/Dockerfile"
